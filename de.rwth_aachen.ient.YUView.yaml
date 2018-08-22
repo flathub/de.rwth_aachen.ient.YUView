@@ -7,6 +7,7 @@ finish-args:
   - --socket=wayland
   - --socket=x11
   - --share=ipc
+  - --filesystem=host
   - --env=QT_NO_FT_CACHE=1
 
 modules:
@@ -25,7 +26,7 @@ modules:
     buildsystem: qmake
     sources:
       - type: git
-        branch: deployment
+        tag: '2.1'
         url: https://github.com/IENT/YUView.git
-        commit: 114590a29bdb66ad326a36c246756a7e5a59f179
+        commit: 9f83e195531a329db787bd47c5c55f4e08a9860e
 
