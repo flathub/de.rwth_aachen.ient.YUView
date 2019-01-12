@@ -20,13 +20,13 @@ modules:
       - type: git
         branch: internal
         url: https://github.com/nolyn/libde265.git
-        commit: 6a59bc176cc53f7e422dcb0078cbcff3246ea56b
+        commit: e655e91d7495785996552e935f308f45c0e6e161
 
   - name: YUView
     buildsystem: qmake
     sources:
       - type: git
-        tag: '2.1'
+        tag: '2.2'
         url: https://github.com/IENT/YUView.git
-        commit: 9f83e195531a329db787bd47c5c55f4e08a9860e
+        commit: e93d75ab5d8d89e6bbad3c1be7630f53c0444857
 
