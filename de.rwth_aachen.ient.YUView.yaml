@@ -28,5 +28,5 @@ modules:
       - type: git
         tag: '2.2'
         url: https://github.com/IENT/YUView.git
-        commit: e93d75ab5d8d89e6bbad3c1be7630f53c0444857
+        commit: 6295b180dece1210dbfa7a16f95709f5ae4aadb8
 
