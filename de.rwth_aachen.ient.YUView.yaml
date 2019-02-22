@@ -28,7 +28,7 @@ modules:
       - type: git
         url: https://github.com/IENT/YUView.git
         branch: flatpak-dev
-        commit: 5a545a5e8c7472d2604aebdd053a9194efb1900e
+        commit: 59097d018d8c1bb870b9b3bb1cc6f5d8d29e1cb2
       - type: shell
         commands:
         - sed -i 's|setDesktopFileName("YUView")|setDesktopFileName("de.rwth_aachen.ient.YUView")|' source/yuviewapp.cpp
