@@ -26,7 +26,9 @@ modules:
     buildsystem: qmake
     sources:
       - type: git
-        tag: '2.2'
         url: https://github.com/IENT/YUView.git
-        commit: 6295b180dece1210dbfa7a16f95709f5ae4aadb8
-
+        branch: flatpak-dev
+        commit: 5a545a5e8c7472d2604aebdd053a9194efb1900e
+      - type: shell
+        commands:
+        - sed -i 's|setDesktopFileName("YUView")|setDesktopFileName("de.rwth_aachen.ient.YUView")|' source/yuviewapp.cpp
