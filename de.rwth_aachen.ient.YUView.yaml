@@ -26,7 +26,10 @@ modules:
     buildsystem: qmake
     sources:
       - type: git
-        tag: '2.3'
+        tag: '2.4'
         url: https://github.com/IENT/YUView.git
-        commit: 5c25b3798291b86ca33c943adbe08f45452f60c5
-
+        commit: d6dd423ddcd5ea9312ce83f3263d9eb2df629871
+#      - type: dir
+#        path: /home/sauer/Software/YUView/development/YUView
+      - type: patch
+        path: update_2.4.patch
