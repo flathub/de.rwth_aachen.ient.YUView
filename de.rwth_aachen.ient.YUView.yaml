@@ -1,6 +1,6 @@
 app-id: de.rwth_aachen.ient.YUView
 runtime: org.kde.Platform
-runtime-version: '5.12'
+runtime-version: '5.14'
 sdk: org.kde.Sdk
 command: YUView
 finish-args:
@@ -28,7 +28,7 @@ modules:
       - type: git
         tag: '2.6'
         url: https://github.com/IENT/YUView.git
-        commit: aed2850480f97e12c6e1455e9a7cd1b9409eb202
+        commit: 5e845470cf0571e5fabc6c0c2c5db4c6f3cec5af
 #      - type: dir
 #        path: /home/sauer/Software/YUView/development/YUView
       - type: patch
