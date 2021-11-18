@@ -18,9 +18,15 @@ modules:
     config-opts:
       - -DONLY_LIB=ON
       - -DCMAKE_INSTALL_LIBDIR:PATH=/app/lib
+    build-options:
+      arch:
+        aarch64:
+          cflags: -fPIC
+          cxxflags: -fPIC
+          ldflags: -fPIC
     sources:
       - type: git
-        branch: internal
+        # branch: internal
         url: https://github.com/nolyn/libde265.git
         commit: e655e91d7495785996552e935f308f45c0e6e161
 
@@ -48,6 +54,3 @@ modules:
         tag: 'v.2.12'
         url: https://github.com/IENT/YUView.git
         commit: edf09a40c1d79256efb2d969786b53870dae9afa
-#      - type: dir
-#        path: ~/Software/YUView/development/YUView
-
