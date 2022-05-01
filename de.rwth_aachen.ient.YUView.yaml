@@ -51,6 +51,6 @@ modules:
     buildsystem: qmake
     sources:
       - type: git
-        tag: 'v2.12.1'
+        tag: 'v.2.13'
         url: https://github.com/IENT/YUView.git
-        commit: c459fc9f204488fb66cb67a2889da228420bf8a1
+        commit: 6a93e0605f4ba56a1da500da026645866e2dd865
