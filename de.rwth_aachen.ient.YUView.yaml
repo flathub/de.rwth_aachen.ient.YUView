@@ -1,16 +1,24 @@
 app-id: de.rwth_aachen.ient.YUView
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+runtime-version: '5.15-23.08'
 sdk: org.kde.Sdk
 command: YUView
 finish-args:
   - --socket=wayland
-  - --socket=x11
+  - --socket=fallback-x11
   - --share=ipc
   - --share=network
   - --filesystem=host
   - --env=QT_NO_FT_CACHE=1
   - --device=dri
+add-extensions:
+  org.freedesktop.Platform.ffmpeg-full:
+    directory: 'lib/ffmpeg'
+    version: '23.08'
+    add-ld-path: '.'
+    autodelete: false
+cleanup-commands:
+  - mkdir -p /app/lib/ffmpeg
 
 modules:
   - name: libde265
@@ -30,27 +38,10 @@ modules:
         url: https://github.com/nolyn/libde265.git
         commit: e655e91d7495785996552e935f308f45c0e6e161
 
-  - name: ffmpeg
-    config-opts:
-      - --enable-shared
-      - --disable-static
-      - --enable-gnutls
-      - --disable-doc
-      - --disable-programs
-      - --disable-encoders
-      - --disable-muxers
-      - --enable-encoder=png
-    sources:
-      - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-4.2.3.tar.xz
-        sha256: 9df6c90aed1337634c1fb026fb01c154c29c82a64ea71291ff2da9aacb9aad31
-    cleanup:
-      - /share/ffmpeg/examples
-
   - name: YUView
     buildsystem: qmake
     sources:
       - type: git
-        tag: 'v.2.13'
+        tag: 'v2.14'
         url: https://github.com/IENT/YUView.git
-        commit: 6a93e0605f4ba56a1da500da026645866e2dd865
+        commit: 22c1e305bef25b23850a2068dcef3fb165c3fd60
