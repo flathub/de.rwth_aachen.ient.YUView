@@ -1,42 +1,16 @@
 app-id: de.rwth_aachen.ient.YUView
 runtime: org.kde.Platform
-runtime-version: '5.15-23.08'
+runtime-version: '5.15-25.08'
 sdk: org.kde.Sdk
 command: YUView
 finish-args:
-  - --socket=wayland
-  - --socket=fallback-x11
-  - --share=ipc
-  - --filesystem=host
-  - --env=QT_NO_FT_CACHE=1
   - --device=dri
-add-extensions:
-  org.freedesktop.Platform.ffmpeg-full:
-    directory: 'lib/ffmpeg'
-    version: '23.08'
-    add-ld-path: '.'
-    autodelete: false
-cleanup-commands:
-  - mkdir -p /app/lib/ffmpeg
+  - --filesystem=host
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
 
 modules:
-  - name: libde265
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DONLY_LIB=ON
-      - -DCMAKE_INSTALL_LIBDIR:PATH=/app/lib
-    build-options:
-      arch:
-        aarch64:
-          cflags: -fPIC
-          cxxflags: -fPIC
-          ldflags: -fPIC
-    sources:
-      - type: git
-        # branch: internal
-        url: https://github.com/nolyn/libde265.git
-        commit: e655e91d7495785996552e935f308f45c0e6e161
-
   - name: YUView
     buildsystem: qmake
     sources:
