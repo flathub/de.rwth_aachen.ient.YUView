@@ -34,6 +34,6 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: git
-        tag: v2.15
+        tag: v2.16
         url: https://github.com/IENT/YUView.git
-        commit: eb687964607aad25c8f91b0cd7958a22fc92e76b
+        commit: 035cda2c11314f516fb518906f50441d2f0c8af1
